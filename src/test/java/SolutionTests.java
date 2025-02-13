@@ -1,9 +1,4 @@
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.MethodSource;
-
-import java.util.ArrayList;
-import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -11,17 +6,15 @@ public class SolutionTests extends UtilClass {
 
     @Test
     void imperativeSolutionTest() {
-        assertEquals(1, CodeWars.imperativeSolution(new ArrayList<>(Arrays.asList(0,0,0,1))));
-        assertEquals(15, CodeWars.imperativeSolution(new ArrayList<>(Arrays.asList(1,1,1,1))));
-        assertEquals(6, CodeWars.imperativeSolution(new ArrayList<>(Arrays.asList(0,1,1,0))));
-        assertEquals(9, CodeWars.imperativeSolution(new ArrayList<>(Arrays.asList(1,0,0,1))));
+        assertEquals("01011110001100111", Main.fakeBinImp("45385593107843568"));
+        assertEquals("101000111101101", Main.fakeBinImp("509321967506747"));
+        assertEquals("011011110000101010000011011", Main.fakeBinImp("366058562030849490134388085"));
     }
 
     @Test
     void declarativeSolutionTest() {
-        assertEquals(1, CodeWars.declarativeSolution(new ArrayList<>(Arrays.asList(0,0,0,1))));
-        assertEquals(15, CodeWars.declarativeSolution(new ArrayList<>(Arrays.asList(1,1,1,1))));
-        assertEquals(6, CodeWars.declarativeSolution(new ArrayList<>(Arrays.asList(0,1,1,0))));
-        assertEquals(9, CodeWars.declarativeSolution(new ArrayList<>(Arrays.asList(1,0,0,1))));
+        assertEquals("01011110001100111", Main.fakeBinDecl("45385593107843568"));
+        assertEquals("101000111101101", Main.fakeBinDecl("509321967506747"));
+        assertEquals("011011110000101010000011011", Main.fakeBinDecl("366058562030849490134388085"));
     }
 }
