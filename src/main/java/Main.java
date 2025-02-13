@@ -4,15 +4,7 @@ public class Main {
     }
 
     public static String fakeBinImp(String numberString) {
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < numberString.length(); i++) {
-            if (numberString.charAt(i) >= '5') {
-                sb.insert(i, '1');
-            } else {
-                sb.insert(i, '0');
-            }
-        }
-        return sb.toString();
+       return numberString.replaceAll("[1-4]","0").replaceAll("[5-9]","1");
     }
 
     public static String fakeBinDecl(String numberString) {
