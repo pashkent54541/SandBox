@@ -4,24 +4,22 @@ public class Main {
 
     }
 
-    public static String reverseWords(final String s) {
-        String[] words = s.split(" ");
-        StringBuilder resultString = new StringBuilder();
+    public static String reverseWords(final String str) {
+        StringBuilder result = new StringBuilder();
+        StringBuilder word = new StringBuilder();
 
-        for (int i = 0; i < words.length; i++) {
-            resultString.append(reverseWord(words[i]));
-            if (i < words.length - 1) {
-                resultString.append(" ");
+        for (int i = 0; i < str.length(); i++) {
+            char c = str.charAt(i);
+
+            if (c == ' ') {
+                result.append(word.reverse()).append(c);
+                word.setLength(0);
+            } else {
+                word.append(c);
             }
         }
-        return resultString.toString();
-    }
+        result.append(word.reverse());
 
-    private static String reverseWord(String s) {
-        StringBuilder sb = new StringBuilder();
-        for (int i = s.length() - 1; i >= 0; i--) {
-            sb.append(s.charAt(i));
-        }
-        return sb.toString();
+        return result.toString();
     }
 }
